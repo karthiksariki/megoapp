@@ -1,8 +1,12 @@
 {
+    "version": 2,
     "builds": [
       {
         "src": "mywebsite/wsgi.py",
-        "use": "@vercel/python"
+        "use": "@vercel/python",
+        "config": {
+          "maxLambdaSize": "50mb"
+        }
       }
     ],
     "routes": [
@@ -12,11 +16,11 @@
       }
     ],
     "env": {
-      "DB_NAME": "railway",
-      "DB_USER": "postgres",
-      "DB_PASSWORD": "dymHoBtqsuWAnmcKBkqwPGOuQYTOTVBm",
-      "DB_HOST": "autorack.proxy.rlwy.net",
-      "DB_PORT": "24306",
-      "SECRET_KEY": "django-insecure-)s*01q(afvy5x!5^iasz_pzoeczrvvc*7dpa*m8j&97!ko!qfz"
-    }
-}
+      "DATABASE_URL": "postgres://postgres:dymHoBtqsuWAnmcKBkqwPGOuQYTOTVBm@autorack.proxy.rlwy.net:24306/railway",
+      "SECRET_KEY": "django-insecure-)s*01q(afvy5x!5^iasz_pzoeczrvvc*7dpa*m8j&97!ko!qfz",
+      "DEBUG": "false"
+    },
+    "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+    "outputDirectory": "staticfiles"
+  }
+  
