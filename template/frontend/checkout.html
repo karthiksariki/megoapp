@@ -34,6 +34,7 @@
     <div class="actions">
         {% if id %}
         <form action="{% url 'Enroll_with_id' id %}" method="POST">
+            
             {% csrf_token %}
             <button type="submit" class="btnname">Proceed to Enroll</button>
         </form>
