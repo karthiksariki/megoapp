@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/admin/card.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="cards">
+      {% for i in data %}
+      <div id="flex">
+        <div class="card">
+          <div id="i">
+            <img src="{{ i.courseimg.url }}" height="30px" />
+          </div>
+          <div id="con">
+            <p id="course">{{i.coursename}}</p>
+            <p id="des">{{i.description}}</p>
+          </div>
+          <div id="down">
+            <hr />
+            <div id="list">
+              {% for j in i.corseconceptlist.all %}
+              <p id="plist">{{j.courseconcept}}</p>
+              {% endfor %}
+            </div>
+            <div id="black">
+              <p id="teacher"><span>By </span>{{i.nametut}}</p>
+              <p id="price"><span>₹ </span>{{i.courseprice}}</p>
+            </div>
+          </div>
+        </div>
+        <div id="btn">
+          <a href="{% url 'coursedelete' i.id %}" id="a"><button id='inner'>delete</button></a>
+          <a href="{% url 'courseupdate' i.id %}" id="a"><button id='inner'>update</button></a>
+        </div>
+      </div>
+      {% endfor %}
+      <div id="plus"><a href="{% url 'course' %}"><span id="innerplus">+</span></a></div>
+    </div>
+  </body>
+</html>

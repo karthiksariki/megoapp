@@ -1,0 +1,60 @@
+{% extends 'frontend/home.html' %} {% load static %} {% block style %}
+<link rel="stylesheet" href="{% static 'css/frontend/card.css' %}" /><link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  rel="stylesheet"
+/>
+{% endblock style %} {% block content %}
+<div id="cards">
+  {% for i in data %}
+  <div id="flex">
+    <div class="card">
+      <div id="i">
+        <img src="{{ i.courseimg.url }}" height="30px" />
+      </div>
+      <div id="con">
+        <p id="course">{{i.coursename}}</p>
+        <p id="des">{{i.description}}</p>
+      </div>
+      <div id="down">
+        <hr />
+        <div id="list">
+          {% for j in i.corseconceptlist.all %}
+          <p id="plist">{{j.courseconcept}}</p>
+          {% endfor %}
+        </div>
+        <div id="black">
+          <p id="teacher"><span>By </span>{{i.nametut}}</p>
+          <p id="price"><span>₹ </span>{{i.courseprice}}</p>
+        </div>
+      </div>
+    </div>
+    <div id="btn">
+        {% if i.id in cart_items %}
+            <a href="{% url 'cart' %}">
+                <button class="cart-button" id="go">Go to Cart</button>
+            </a>
+        {% elif i.id in enrolled_courses %}
+        <a href="{% url 'enroll_courses' %}">
+            <button class="cart-button" id="go">Already Enrolled</button>
+        </a>    
+        {% else %}
+            <form action="{% url 'addtocart' i.id %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" class="cart-button">Add to Cart</button>
+            </form>
+        {% endif %}
+        <form action="{% url 'Checkout_with_id' i.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btnname">Enroll Now</button>
+        </form>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock content %}

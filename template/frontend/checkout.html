@@ -1,0 +1,49 @@
+{% extends 'frontend/home.html' %}
+{% load static %}
+
+{% block style %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/frontend/checkout.css' %}"
+/>
+{% endblock style %}
+
+{% block content %}
+<div class="checkout-container">
+    <h2>Checkout</h2>
+    <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <ul>
+            {% for item in cart_items %}
+            {% if item.courseid %}
+            <li>
+                <p>{{ item.courseid.coursename }} - ₹{{ item.courseid.courseprice }}</p>
+            </li>
+            {% else %}
+            <li>
+                <p>{{ item.coursename }} - ₹{{ item.courseprice }}</p>
+            </li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+        <hr>
+        <div class="total-price">
+            <p>Total: ₹{{ total_price }}</p>
+        </div>
+    </div>
+    <div class="actions">
+        {% if id %}
+        <form action="{% url 'Enroll_with_id' id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btnname">Proceed to Enroll</button>
+        </form>
+        {% else %}
+        <form action="{% url 'Enroll'  %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btnname">Proceed to Enroll</button>
+        </form>
+        {% endif %}
+        <a href="{% url 'cart' %}" class="btnname">Back to Cart</a>
+    </div>
+</div>
+{% endblock content %}
