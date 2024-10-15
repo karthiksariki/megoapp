@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'font'; 
-    src:url(./myfont.otf); 
+    src:url('./myfont.otf');
 }
 *{
     margin: 0%;
@@ -318,7 +318,3 @@ hr {
     background-color: #1a8e77;
 }
 
-#btn .cart-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
