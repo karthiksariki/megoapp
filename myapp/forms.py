@@ -1,8 +1,10 @@
 from django import forms
 from .models import *
 from django.contrib.auth.hashers import make_password, check_password
+from cloudinary.forms import CloudinaryFileField
 
 class coursesForm(forms.ModelForm):
+    courseImg = CloudinaryFileField()
     class Meta:
         model=courses
         fields='__all__'

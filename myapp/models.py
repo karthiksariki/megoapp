@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from cloudinary.models import CloudinaryField
 class CustomUser(AbstractUser):
     phone_number = models.CharField(max_length=15, blank=True, null=True)
     address = models.TextField(blank=True, null=True)
@@ -16,7 +16,7 @@ class courseconcepts(models.Model):
 
 class courses(models.Model):
     coursename=models.CharField(max_length=50)
-    courseimg=models.ImageField(upload_to='')
+    courseimg=CloudinaryField('course')
     description=models.CharField(max_length=400)
     nametut=models.CharField(max_length=20)
     courseprice=models.IntegerField()
