@@ -318,7 +318,3 @@ hr {
     background-color: #1a8e77;
 }
 
-#btn .cart-button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}

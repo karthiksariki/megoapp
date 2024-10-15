@@ -5,6 +5,43 @@
 <link rel="stylesheet" href="{% static 'css/frontend/enrollcourses.css' %}" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+{% endblock style %}
+
+{% block content %}
+<div class="enroll-courses-container">
+    <h2>You Enrolled in {{ enrolled_courses.count }} Courses</h2>
+    {% if enrolled_courses %}
+        <ul class="course-list">
+            {% for enrollment in enrolled_courses %}
+                <li class="course-item">
+                    <div class="course-image">
+                        {% if enrollment.courseid.courseimg %}
+                            <img src="{{ enrollment.courseid.courseimg.url }}" alt="{{ enrollment.courseid.coursename }}">
+                        {% else %}
+                            <img src="{% static 'images/course-placeholder.jpg' %}" alt="{{ enrollment.courseid.coursename }}">
+                        {% endif %}
+                    </div>
+                    <div class="course-details">
+                        <h3>{{ enrollment.courseid.coursename }}</h3>
+                        <p>By: {{ enrollment.courseid.nametut }}</p>
+                        <p class="course-price">Price: ₹{{ enrollment.courseid.courseprice }}/-</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have not enrolled in any courses yet.</p>
+    {% endif %}
+</div>
+{% endblock content %}
+{% comment %} {% extends 'frontend/home.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/frontend/enrollcourses.css' %}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
   href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
   rel="stylesheet"
@@ -31,4 +68,4 @@
         <a href="{% url 'home' %}" class="btnname">Home</a>
     </div>
 </div>
-{% endblock content %}
+{% endblock content %} {% endcomment %}

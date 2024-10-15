@@ -40,7 +40,7 @@
             </a>
         {% elif i.id in enrolled_courses %}
         <a href="{% url 'enroll_courses' %}">
-            <button class="cart-button" id="go">Already Enrolled</button>
+            <button class="cart-button" id="go">Go to Enrolled Courses</button>
         </a>    
         {% else %}
             <form action="{% url 'addtocart' i.id %}" method="POST">
@@ -48,10 +48,17 @@
                 <button type="submit" class="cart-button">Add to Cart</button>
             </form>
         {% endif %}
+        
+        {% if i.id in enrolled_courses %}
+        <a href="{% url 'enroll_courses' %}">
+            <button class="cart-button" id="go">Already Enrolled</button>
+        </a>
+        {% else %}
         <form action="{% url 'Checkout_with_id' i.id %}" method="POST">
-            {% csrf_token %}
-            <button type="submit" class="btnname">Enroll Now</button>
-        </form>
+          {% csrf_token %}
+          <button type="submit" class="cart-button" id="go1">Enroll Now</button>
+      </form>
+      {% endif %}
     </div>
   </div>
   {% endfor %}

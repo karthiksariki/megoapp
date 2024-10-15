@@ -36,7 +36,7 @@ class EnrolledCourses(models.Model):
     enrollment_date = models.DateTimeField(auto_now_add=True)
 
     class Meta:
-        unique_together = ('userid', 'courseid')  # Ensures a user can't enroll in the same course twice
+        unique_together = ('userid', 'courseid')  
 
     def __str__(self):
         return f"{self.userid.username} enrolled in {self.courseid.coursename}"

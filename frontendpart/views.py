@@ -55,7 +55,6 @@ def Delete(request):
     userdata.delete()
     return redirect('home')
 
-
 class CustomPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
     form_class = PasswordChangeForm
     template_name = 'frontend/changepassword.html'

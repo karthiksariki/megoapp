@@ -58,6 +58,7 @@
                 </tr>
             </thead>
             <tbody>
+
                 {% for item in cart_items %}
                 <tr>
                     <td>{{ item.courseid.coursename }}</td>
@@ -79,7 +80,6 @@
             <p>Your cart is empty.</p>
         </div>
     {% endif %}
-
     <a href="{% url 'card' %}" class="btnname">Continue Shopping</a>
 </div>
 {% endblock %}

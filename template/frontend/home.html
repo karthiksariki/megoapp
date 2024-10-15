@@ -18,6 +18,11 @@
                 <img src="https://ik.imagekit.io/sheryians/Sheryians_logo_EzwgcppnD" alt="shair" height='23px'>
             </div>
             <div>Sheryians coding school</div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
         <div id="right">
             <a href="{% url 'home' %}">Home</a>
@@ -64,5 +69,18 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="{% static 'javascript/script.js' %}"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                const hamburger = document.querySelector('.hamburger');
+                const navMenu = document.querySelector('#right');
+        
+                hamburger.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+            });
+        </script>
 </body>
 </html>
+
+
+
