@@ -155,8 +155,8 @@ body::-webkit-scrollbar {
 
 
 .card{
-    height: 430px;
-    width: 340px;
+    height: 530px;
+    width: 440px;
     background-color: #2C2C2C;
     display: flex;
     flex-direction: column;
