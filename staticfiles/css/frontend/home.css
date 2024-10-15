@@ -6,14 +6,13 @@
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    font-family: 'font' ,sans-serif;
+    
 }
 body{
-    
     background-color: black;
     height: 100vh;
     width: 105vw;
-    background-image: url("data:image/svg+xml;charset=utf-8;base64,PHN2ZyB3aWR0aD0nMTUxMicgaGVpZ2h0PSc2Mzk3JyB2aWV3Qm94PScwIDAgMTUxMiA2Mzk3JyBmaWxsPSdub25lJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxnIGNsaXAtcGF0aD0ndXJsKCNjbGlwMF8yNDNfMiknPjxyZWN0IHdpZHRoPScxNTEyJyBoZWlnaHQ9JzYzOTcnIGZpbGw9JyMwYzBjMGMnIC8+PGcgb3BhY2l0eT0nMC40JyBmaWx0ZXI9J3VybCgjZmlsdGVyMF9mXzI0M18yKSc+PHBhdGggZD0nTTM4Ny4zOCAxMzcuNTUzQzM1NS4yOTcgLTEwNy43NzQgNTEzLjYyNSAtMzcxLjg5MiA3NTIuOTM1IC00MDMuMTg4Qzk5Mi4yNDYgLTQzNC40ODUgMTA4Ny4zNSAtMjczLjExNyAxMTE5LjQ0IC0yNy43OTA2QzExNTEuNTIgMjE3LjUzNiA5OTMuMjA4IC0zNi42MjI0IDc5Ni44OCAtMTAuOTQ3QzU1Ny41NjkgMjAuMzQ5NSA0MTkuNDYzIDM4Mi44OCAzODcuMzggMTM3LjU1M1onIGZpbGw9JyMyNGNmYTcnIC8+PC9nPjxnIGZpbHRlcj0ndXJsKCNmaWx0ZXIxX2ZfMjQzXzIpJz48Y2lyY2xlIGN4PScxNScgY3k9JzMxNzYnIHI9JzE4NScgZmlsbD0nIzI0Y2ZhNycgLz48L2c+PGcgZmlsdGVyPSd1cmwoI2ZpbHRlcjJfZl8yNDNfMiknPjxjaXJjbGUgY3g9JzEyNzUnIGN5PSc4NDAnIHI9JzY0JyBmaWxsPScjMjRjZmE3JyAvPjwvZz48L2c+PGRlZnM+PGZpbHRlciBpZD0nZmlsdGVyMF9mXzI0M18yJyB4PScyMzkuMjU4JyB5PSctNTUxLjA2Micgd2lkdGg9JzEwMjguMzMnIGhlaWdodD0nOTE3LjMxJyBmaWx0ZXJVbml0cz0ndXNlclNwYWNlT25Vc2UnIGNvbG9yLWludGVycG9sYXRpb24tZmlsdGVycz0nc1JHQic+PGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0nMCcgcmVzdWx0PSdCYWNrZ3JvdW5kSW1hZ2VGaXgnIC8+PGZlQmxlbmQgbW9kZT0nbm9ybWFsJyBpbj0nU291cmNlR3JhcGhpYycgaW4yPSdCYWNrZ3JvdW5kSW1hZ2VGaXgnIHJlc3VsdD0nc2hhcGUnIC8+PGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0nNzInIHJlc3VsdD0nZWZmZWN0MV9mb3JlZ3JvdW5kQmx1cl8yNDNfMicgLz48L2ZpbHRlcj48ZmlsdGVyIGlkPSdmaWx0ZXIxX2ZfMjQzXzInIHg9Jy03NzQnIHk9JzIzODcnIHdpZHRoPScxNTc4JyBoZWlnaHQ9JzE1NzgnIGZpbHRlclVuaXRzPSd1c2VyU3BhY2VPblVzZScgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSdzUkdCJz48ZmVGbG9vZCBmbG9vZC1vcGFjaXR5PScwJyByZXN1bHQ9J0JhY2tncm91bmRJbWFnZUZpeCcgLz48ZmVCbGVuZCBtb2RlPSdub3JtYWwnIGluPSdTb3VyY2VHcmFwaGljJyBpbjI9J0JhY2tncm91bmRJbWFnZUZpeCcgcmVzdWx0PSdzaGFwZScgLz48ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSczMDInIHJlc3VsdD0nZWZmZWN0MV9mb3JlZ3JvdW5kQmx1cl8yNDNfMicgLz48L2ZpbHRlcj48ZmlsdGVyIGlkPSdmaWx0ZXIyX2ZfMjQzXzInIHg9Jzk2NycgeT0nNTMyJyB3aWR0aD0nNjE2JyBoZWlnaHQ9JzYxNicgZmlsdGVyVW5pdHM9J3VzZXJTcGFjZU9uVXNlJyBjb2xvci1pbnRlcnBvbGF0aW9uLWZpbHRlcnM9J3NSR0InPjxmZUZsb29kIGZsb29kLW9wYWNpdHk9JzAnIHJlc3VsdD0nQmFja2dyb3VuZEltYWdlRml4JyAvPjxmZUJsZW5kIG1vZGU9J25vcm1hbCcgaW49J1NvdXJjZUdyYXBoaWMnIGluMj0nQmFja2dyb3VuZEltYWdlRml4JyByZXN1bHQ9J3NoYXBlJyAvPjxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249JzEyMicgcmVzdWx0PSdlZmZlY3QxX2ZvcmVncm91bmRCbHVyXzI0M18yJyAvPjwvZmlsdGVyPjxjbGlwUGF0aCBpZD0nY2xpcDBfMjQzXzInPjxyZWN0IHdpZHRoPScxNTEyJyBoZWlnaHQ9JzYzOTcnIGZpbGw9J3doaXRlJyAvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==");
+    background-image: url("data:image/svg+xml,%3Csvg width='1512' height='6397' viewBox='0 0 1512 6397' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_243_2)'%3E%3Crect width='1512' height='6397' fill='%230c0c0c' /%3E%3Cg opacity='0.4' filter='url(%23filter0_f_243_2)'%3E%3Cpath d='M387.38 137.553C355.297 -107.774 513.625 -371.892 752.935 -403.188C992.246 -434.485 1087.35 -273.117 1119.44 -27.7906C1151.52 217.536 993.208 -36.6224 796.88 -10.947C557.569 20.3495 419.463 382.88 387.38 137.553Z' fill='%2324cfa7' /%3E%3C/g%3E%3Cg filter='url(%23filter1_f_243_2)'%3E%3Ccircle cx='15' cy='3176' r='185' fill='%2324cfa7' /%3E%3C/g%3E%3Cg filter='url(%23filter2_f_243_2)'%3E%3Ccircle cx='1275' cy='840' r='64' fill='%2324cfa7' /%3E%3C/g%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_f_243_2' x='239.258' y='-551.062' width='1028.33' height='917.31' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' /%3E%3CfeGaussianBlur stdDeviation='72' result='effect1_foregroundBlur_243_2' /%3E%3C/filter%3E%3Cfilter id='filter1_f_243_2' x='-774' y='2387' width='1578' height='1578' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' /%3E%3CfeGaussianBlur stdDeviation='302' result='effect1_foregroundBlur_243_2' /%3E%3C/filter%3E%3Cfilter id='filter2_f_243_2' x='967' y='532' width='616' height='616' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='BackgroundImageFix' result='shape' /%3E%3CfeGaussianBlur stdDeviation='122' result='effect1_foregroundBlur_243_2' /%3E%3C/filter%3E%3CclipPath id='clip0_243_2'%3E%3Crect width='1512' height='6397' fill='white' /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
     background-position: top;
     background-size: 105vw;
     background-repeat: no-repeat;
@@ -25,24 +24,31 @@ nav{
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 60px;
-    padding-right: 70px;
+    padding-right: 120px;
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(5px);
     background: transparent;
+    font-family: 'font',sans-serif;
+    
+}
+nav>#right{
+    font-family: 'font',sans-serif;
 }
 #right>a{
     text-decoration: none;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 16px;
+    
 }
+
 
 #left{
     width: 20vw;
     display: flex;
     color: #ffffff;
     justify-content: flex-start;
-    font-size: 12px;
+    font-size: 16px;
     align-items: center;
 }
 img{
@@ -54,11 +60,9 @@ img{
     justify-content: space-evenly;
     align-items: center;
 }
-#right a:hover{
-    color: #24CFA6;
-}
+
 body::-webkit-scrollbar {
-    display: none; 
+    display: none; /* Hide scrollbar */
 }
 .btn{
     padding: 5px 12px;
@@ -88,7 +92,6 @@ body::-webkit-scrollbar {
 .btnname:hover {
     background-color: #20b497;
 }
-
 #full {
     height: 40vh;
     width: 15vw;
@@ -109,14 +112,6 @@ body::-webkit-scrollbar {
     text-decoration: none;
     color: #ffffff;
 }
-
-#full a:hover {
-    color: #24CFA6;
-}
-#full i:hover {
-    color: #24CFA6;
-}
-
 #username h3{
     color: #ffffff;
 }
@@ -126,25 +121,25 @@ body::-webkit-scrollbar {
     cursor: none;
 }
 
-#full #profilelink:hover{
+#full a:hover {
     color: #24CFA6;
 }
-hr{
-    width: 100%;
+#profilelink i:hover{
+    color: #24CFA6;
 }
-
 #username{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
+
 #profilelink, #logout {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    width: 100%;
-    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    width: 100%; 
+    padding: 10px 0; 
 }
 
 .togethier{
@@ -156,6 +151,7 @@ hr{
 #profilelink i, #logout i {
     color: #ffffff;
 }
+
 
 #main{
     width: 100vw;

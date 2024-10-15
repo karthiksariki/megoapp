@@ -177,7 +177,7 @@ body::-webkit-scrollbar {
     margin-left: 50px;
     padding-left: 30px;
     margin-top: 30px;
-    
+    padding-right: 120px;
 }
 
 #course{
