@@ -14,6 +14,7 @@ class courseconcepts(models.Model):
         return self.courseconcept
 
 
+
 class courses(models.Model):
     coursename=models.CharField(max_length=50)
     courseimg=CloudinaryField('course')
@@ -25,6 +26,7 @@ class courses(models.Model):
     def __str__(self):
         return self.coursename
     
+
 class CartItems(models.Model):
     userid=models.ForeignKey(CustomUser,on_delete=models.CASCADE)
     courseid=models.ForeignKey(courses,on_delete=models.CASCADE)

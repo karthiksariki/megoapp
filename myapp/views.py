@@ -31,9 +31,7 @@ def course(request):
     f = coursesForm()
     if request.method == 'POST':
         form = coursesForm(request.POST,request.FILES)
-        
         if form.is_valid():
-            
             form.save()
             data=courses.objects.all()
             return render(request,'admin/coursemenu.html',{'data':data})

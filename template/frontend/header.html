@@ -1,0 +1,84 @@
+<nav>
+    <div id="left">
+        <div>
+            <img src="https://ik.imagekit.io/sheryians/Sheryians_logo_EzwgcppnD" alt="shair" height='23px'>
+        </div>
+        <div><a href="{% url 'home' %}">MEGO coding school</a></div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="right">
+       {% if user.is_authenticated %}
+       <a href="{% url 'home' %}">Home</a>
+       <a href="{% url 'card' %}">Courses</a>
+       <a href="{% url 'cart' %}">Cart</a>
+       <a href="{% url 'enroll_courses' %}">enrolled-courses</a>
+       {% else %}
+       <a href="{% url 'home' %}">Home</a>
+       <a href="{% url 'card' %}">Courses</a>
+       {% endif %}
+        {% if user.is_authenticated %}
+            <div class="dropdown">
+                <button class="btn" id="menu">{{ user.username|slice:":1" }}</button>
+                <div id="full">
+                    <div id="username">
+                        <h3>{{user}}</h3>
+                        <hr>
+                    </div>
+                    <div id="profilelink">
+                        <div class="togethier">
+                            <i class="ri-user-line i"></i>
+                            <a href="{% url 'profile' %}">Profile</a>
+                        </div>
+                        <div><i class="ri-arrow-right-s-line i"></i></div>
+                    </div>
+                    <div id="logout">
+                        <div class="togethier">
+                            <i class="ri-logout-circle-r-line i"></i>
+                            <a href="{% url 'logout' %}">logout</a>
+                        </div>
+                        <div><i class="ri-arrow-right-s-line i"></i></div>
+                    </div>
+                </div>
+            </div>
+        {% else %}
+            <a href="{% url 'Login' %}"><button class="btnname">Login</button></a>
+        {% endif %}
+    </div>
+</nav>
+
+{% comment %} <nav>
+    <div id="left">
+        <div>
+            <img src="https://ik.imagekit.io/sheryians/Sheryians_logo_EzwgcppnD" alt="shair" height='23px'>
+        </div>
+        <div>MEGO coding school</div>
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="right">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'card' %}">Courses</a>
+        <a href="{% url 'cart' %}">Cart</a>
+        <a href="{% url 'enroll_courses' %}">enrolled-courses</a>
+        {% if user.is_authenticated %}
+    <div class="dropdown">
+        <button class="btn" id="menu">{{ user.username|slice:":1" }}</button>
+            <div id="full">
+                <div id="username"><h3>{{user}}</h3>
+                <hr></div>
+                <div id="profilelink"><div class="togethier"><i class="ri-user-line i"></i><a href="{% url 'profile' %}">Proflie</a></div><div><i class="ri-arrow-right-s-line i"></i></div></div>
+                
+                <div id="logout"><div class="togethier"><i class="ri-logout-circle-r-line i"></i><a href="{% url 'logout' %}">logout</a></div><div><i class="ri-arrow-right-s-line i"></i></div></div>
+            </div>
+    {% else %}
+    <a href="{% url 'Login' %}"><button class="btnname">Login</button></a>
+    {% endif %}
+    </div>
+</nav> {% endcomment %}

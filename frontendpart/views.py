@@ -16,13 +16,18 @@ def home(request):
     user=request.user
     return render(request,"frontend/home.html",{'user':user})
 
-@login_required(login_url='Login')
+
 def card(request):
     user = request.user
     courses_list = courses.objects.all()
-    cart_items = list(CartItems.objects.filter(userid=user).values_list('courseid', flat=True))
-    enrolled_courses = EnrolledCourses.objects.filter(userid=request.user).select_related('courseid')
-    enrolled_course_ids = enrolled_courses.values_list('courseid_id', flat=True)
+    if user.is_authenticated:
+        cart_items = list(CartItems.objects.filter(userid=user).values_list('courseid', flat=True))
+        enrolled_courses = EnrolledCourses.objects.filter(userid=request.user).select_related('courseid')
+        enrolled_course_ids = enrolled_courses.values_list('courseid_id', flat=True)
+    else:
+        cart_items =[]
+        enrolled_courses=[]
+        enrolled_course_ids=[]
     context = {
         'data': courses_list,
         'cart_items': cart_items,
@@ -133,7 +138,7 @@ def enroll(request,id=None):
             cartitem.delete()
             return redirect('enroll_courses')
     
-    return render(request, 'frontend/enroll.html')
+    # return render(request, 'frontend/enroll.html')
 
 
 @login_required(login_url='Login')
@@ -145,18 +150,4 @@ def enroll_courses(request):
     return render(request, 'frontend/enrollcourses.html', context)
 
 
-@login_required(login_url='Login')
-def enroll_course(request, course_id):
-    course = get_object_or_404(courses, id=course_id)
-    already_enrolled = EnrolledCourses.objects.filter(userid=request.user, courseid=course).exists()
-    if request.method == 'POST':
-        if not already_enrolled:
-            EnrolledCourses.objects.create(userid=request.user, courseid=course)
-            # messages.success(request, f"You have successfully enrolled in {course.coursename}.")
-            CartItems.objects.get_or_create(userid=request.user, courseid=course)
-            return redirect('checkout') 
-    context = {
-        'course': course,
-        'already_enrolled': already_enrolled,
-    }
-    return render(request, 'frontend/enroll_course.html', context)
+

@@ -1,17 +1,17 @@
 let tl1=gsap.timeline()
 tl1.from("#full",{
-    y:-400,
+    y:-1000,
     duration:0.4,
     opacity:-1
 })
 tl1.from("#full #profilelink",{
-    y:-100,
+    y:-400,
     opacity:0,
     duration:0.5,
     stagger:0.3,
 })
 tl1.from("#full #logout",{
-    y:-100,
+    y:-400,
     opacity:0,
     duration:0.5,
     stagger:0.3,
