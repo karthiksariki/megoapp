@@ -168,15 +168,15 @@ body::-webkit-scrollbar {
 }
 .checkout-container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    
     gap: 20px;
     padding: 40px;
     background-color: #2C2C2C;
     color: #fff;
     border-radius: 8px;
     width: 50%;
-    margin: 0 auto;
     font-family: 'Inter', sans-serif;
 }
 
@@ -349,6 +349,11 @@ h2, h3 {
         right: 5%;
         left: 5%;
     }
+
+
+    .checkout-container {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -462,5 +467,9 @@ h2, h3 {
     #long > button {
         font-size: small;
         padding: 8px 20px;
+    }
+
+    .checkout-container {
+        width: 100%;
     }
 } 
