@@ -14,7 +14,22 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 def home(request):
     user=request.user
-    return render(request,"frontend/home.html",{'user':user})
+    randomCourses = courses.objects.order_by('?')[:3]
+    if user.is_authenticated:
+        cart_items = list(CartItems.objects.filter(userid=user).values_list('courseid', flat=True))
+        enrolled_courses = EnrolledCourses.objects.filter(userid=request.user).select_related('courseid')
+        enrolled_course_ids = enrolled_courses.values_list('courseid_id', flat=True)
+    else:
+        cart_items =[]
+        enrolled_courses=[]
+        enrolled_course_ids=[]
+    context = {
+        'cart_items': cart_items,
+        'enrolled_courses': enrolled_course_ids,
+        'user':user,
+        'randomCourses':randomCourses
+    }
+    return render(request,"frontend/home.html",context)
 
 
 def card(request):

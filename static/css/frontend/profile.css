@@ -169,7 +169,7 @@ body::-webkit-scrollbar {
 }
 
 #profile {
-    background-color: #2C2C2C;
+    background-color: #000;
     border-radius: 10px;
     width: 700px;
     height: 450px;
