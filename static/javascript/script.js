@@ -26,22 +26,6 @@ tl1.from("#full #hi",{
     y:-100,
     duration:0.3,
 })
-// tl1.from("#full a",{
-//     y:-100,
-//     opacity:0,
-//     duration:0.5,
-//     stagger:0.3,
-// })
-// tl1.from("#full .i",{
-//     y:-100,
-//     opacity:0,
-//     duration:0.5,
-//     stagger:0.3,
-// })
-// tl1.from("#full #hi",{
-//     y:-100,
-//     duration:0.3,
-// })
 tl1.pause()
 let menu = document.querySelector("#menu");
 let isOpen = false;
