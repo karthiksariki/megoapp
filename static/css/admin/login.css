@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'font'; 
-    src:url('./myfont.otf'); 
+    src:url('./../frontend/myfont.otf');  
 }
 *{
   margin: 0%;

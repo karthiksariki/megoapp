@@ -37,6 +37,7 @@ nav>#right{
     font-family: 'font',sans-serif;
 }
 #right>a{
+    outline: none;
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
@@ -53,6 +54,7 @@ nav>#right{
     align-items: center;
 }
 #left a{
+    outline: none;
     text-decoration: none;
     font-family: 'font',sans-serif;
     color: #ffffff;
@@ -140,24 +142,23 @@ body::-webkit-scrollbar {
     gap: 10px;
 }
 
-#profilelink, #logout {
+#profilelink, #logout,#adminportal {
     display: flex;
     justify-content: space-between;
     align-items: center; 
     width: 100%; 
     padding: 10px 0; 
 }
-
+  
 .togethier{
     display: flex; 
     align-items: center;
     gap: 5px; 
 }
-
-#profilelink i, #logout i {
+  
+#profilelink i, #logout i , #adminportal i{
     color: #ffffff;
 }
-
 
 
 #centerprofile{
@@ -224,7 +225,6 @@ input:focus {
 
 .button-group {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
@@ -307,6 +307,22 @@ input:focus {
 .form-group-phone {
     flex: 1;
     width: 30%;
+}
+
+
+.changepassword{
+  color: white; 
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 20px; 
+  gap: 10px;
+  font-family: 'inter';
+}
+.changepassword a{
+    text-decoration: none;
+    color: #24CFA6;
 }
 
 

@@ -36,6 +36,7 @@ nav>#right{
     font-family: 'font',sans-serif;
 }
 #right>a{
+    outline: none;
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
@@ -52,6 +53,7 @@ nav>#right{
     align-items: center;
 }
 #left a{
+    outline: none;
     text-decoration: none;
     font-family: 'font',sans-serif;
     color: #ffffff;
@@ -139,24 +141,23 @@ body::-webkit-scrollbar {
     gap: 10px;
 }
 
-#profilelink, #logout {
+#profilelink, #logout,#adminportal {
     display: flex;
     justify-content: space-between;
     align-items: center; 
     width: 100%; 
     padding: 10px 0; 
-}
-
-.togethier{
+  }
+  
+  .togethier{
     display: flex; 
     align-items: center;
     gap: 5px; 
-}
-
-#profilelink i, #logout i {
+  }
+  
+  #profilelink i, #logout i , #adminportal i{
     color: #ffffff;
-}
-
+  }
 
 
 #flex{
@@ -184,6 +185,7 @@ h2, h3 {
     text-align: center;
     margin-bottom: 20px;
 }
+
 
 .cart-summary ul {
     list-style-type: none;

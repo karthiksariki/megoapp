@@ -36,6 +36,7 @@ nav>#right{
     font-family: 'font',sans-serif;
 }
 #right>a{
+    outline: none;
     text-decoration: none;
     color: #ffffff;
     font-size: 16px;
@@ -52,6 +53,7 @@ nav>#right{
     align-items: center;
 }
 #left a{
+    outline: none;
     text-decoration: none;
     font-family: 'font',sans-serif;
     color: #ffffff;
@@ -139,32 +141,37 @@ body::-webkit-scrollbar {
     gap: 10px;
 }
 
-#profilelink, #logout {
+#profilelink, #logout,#adminportal {
     display: flex;
     justify-content: space-between;
     align-items: center; 
     width: 100%; 
     padding: 10px 0; 
 }
-
+  
 .togethier{
     display: flex; 
     align-items: center;
     gap: 5px; 
 }
-
-#profilelink i, #logout i {
+  
+#profilelink i, #logout i , #adminportal i{
     color: #ffffff;
 }
+
+
+
+
+
 
 
 .enroll-courses-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    z-index: -1;
-   backdrop-filter: blur(50px);
-   background-color: black;
+   backdrop-filter: blur(10px);
+   z-index: -1;
+   background-color: #000;
 }
 
 h2 {
@@ -181,17 +188,19 @@ h2 {
 }
 
 .course-item {
+    text-decoration: none;
     background-color: #2d2d2d;
     border-radius: 8px;
     margin-bottom: 20px;
     display: flex;
     overflow: hidden;
+   
 }
 
 .course-image {
-    width: 100px;
+    width: 200px;
     height: 100px;
-    overflow: hidden;
+    
     flex-shrink: 0;
 }
 
@@ -202,23 +211,32 @@ h2 {
 }
 
 .course-details {
+    text-decoration: none;
     padding: 15px;
     flex-grow: 1;
 }
 
 .course-details h3 {
+    text-decoration: none;
     font-size: 18px;
+    color: #000;
     margin: 0 0 10px 0;
 }
 
 .course-details p {
+    text-decoration: none;
     font-size: 14px;
+    color: #000;
     margin: 5px 0;
 }
 
-.course-price {
-    color: #4caf50;
+.course-details .course-price {
+    text-decoration: none;
+    color: #24CFA6;
     font-weight: bold;
+}
+a{
+    text-decoration: none;
 }
 
 
@@ -279,9 +297,10 @@ h2 {
         display: none;
         flex-direction: column;
         position: absolute;
-        top: 200px;
+        top: 50px;
         right: 20px;
         width: 40%;
+        z-index: 5;
         height: 35vh;
         background: rgba(0, 0, 0, 0.9);
         padding: 20px 0;
@@ -300,6 +319,7 @@ h2 {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-start;
+        
     }
     #right.active {
         display: flex;
@@ -317,6 +337,17 @@ h2 {
         right: 15px;
     }
   
+.enroll-courses-container {
+    position: absolute;
+    width: 80%;
+    margin-left: 10%;
+}
+.course-image {
+  width: 190px;
+    height: 165px;
+    
+    
+}
     
     #full {
         width: 90%;
@@ -347,7 +378,7 @@ h2 {
         background: rgba(0, 0, 0, 0.9);
         padding: 20px 0;
         border-radius: 0.5rem;
-        z-index: 2000;
+        z-index: 5;
     }
     #full {
         height: 40vh;
@@ -362,6 +393,7 @@ h2 {
         flex-direction: column;
         justify-content: space-evenly;
         align-items: flex-start;
+        z-index: 2;
     }
     #right.active {
         display: flex;
@@ -376,6 +408,12 @@ h2 {
         top: 15px;
         right: 15px;
     }
+
+      
+.enroll-courses-container {
+    position: absolute;
+    width: 80%;
+}
     #full {
         width: 90%;
         right: 5%;
