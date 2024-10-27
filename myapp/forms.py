@@ -20,7 +20,7 @@ class courseconceptsform(forms.ModelForm):
 class myregisterform(forms.ModelForm):
     class Meta:
         model=CustomUser
-        fields='__all__'
+        fields=['password', 'username', 'first_name', 'last_name', 'email', 'phone_number']
     
     def save(self):
         old=super().save(commit=False)

@@ -10,6 +10,12 @@ tl1.from("#full #profilelink",{
     duration:0.5,
     stagger:0.3,
 })
+tl1.from("#full #adminportal",{
+    y:-400,
+    opacity:0,
+    duration:0.5,
+    stagger:0.3,
+})
 tl1.from("#full #logout",{
     y:-400,
     opacity:0,

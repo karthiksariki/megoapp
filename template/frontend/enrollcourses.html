@@ -32,20 +32,22 @@
         {% if enrolled_courses %}
             <ul class="course-list">
                 {% for enrollment in enrolled_courses %}
-                    <li class="course-item">
-                        <div class="course-image">
-                            {% if enrollment.courseid.courseimg %}
-                                <img src="{{ enrollment.courseid.courseimg.url }}" alt="{{ enrollment.courseid.coursename }}">
-                            {% else %}
-                                <img src="{% static 'images/course-placeholder.jpg' %}" alt="{{ enrollment.courseid.coursename }}">
-                            {% endif %}
-                        </div>
-                        <div class="course-details">
-                            <h3>{{ enrollment.courseid.coursename }}</h3>
-                            <p>By: {{ enrollment.courseid.nametut }}</p>
-                            <p class="course-price">Price: ₹{{ enrollment.courseid.courseprice }}/-</p>
-                        </div>
-                    </li>
+                    <a href="">
+                        <li class="course-item">
+                            <div class="course-image">
+                                {% if enrollment.courseid.courseimg %}
+                                    <img src="{{ enrollment.courseid.courseimg.url }}" alt="{{ enrollment.courseid.coursename }}">
+                                {% else %}
+                                    <img src="{% static 'images/course-placeholder.jpg' %}" alt="{{ enrollment.courseid.coursename }}">
+                                {% endif %}
+                            </div>
+                            <div class="course-details">
+                                <h3>{{ enrollment.courseid.coursename }}</h3>
+                                <p>By: {{ enrollment.courseid.nametut }}</p>
+                                <p class="course-price">Price: ₹{{ enrollment.courseid.courseprice }}/-</p>
+                            </div>
+                        </li>
+                    </a>
                 {% endfor %}
             </ul>
         {% else %}

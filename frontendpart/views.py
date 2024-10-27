@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect,HttpResponse,get_object_or_404
 from myapp.models import *
 from myapp.forms import *
 from .forms import *
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required,user_passes_test
 from django.contrib.auth import update_session_auth_hash
 from django.contrib import messages
 from django.contrib.auth.views import PasswordChangeView

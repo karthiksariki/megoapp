@@ -27,7 +27,7 @@ urlpatterns = [
     path('login/',Login,name='Login'),
     path('logout/',Logout,name="logout"),
     path('course/',course,name='course'),
-    path('concept/',courseconcept),
+    path('concept/',courseconcept,name='courseconcept'),
     path('card/',card,name="card"),
     path('admincards/',admincoursemenu,name='coursemenu'),
     path('admindelete/<int:id>/',admincoursedelete,name='coursedelete'),
@@ -44,5 +44,7 @@ urlpatterns = [
     path('enroll/',enroll, name='Enroll'),
     path('enroll/<int:id>/',enroll, name='Enroll_with_id'),
     path('enroll-courses/', enroll_courses, name='enroll_courses'),
+    path('conceptmenu/',admincourseconcept,name='admincourseconcept'),
+    path('deleteconcept/<int:id>/',deleteadmincourseconcept,name='deleteadmincourseconcept'),
 ]
 

@@ -7,7 +7,9 @@ def register(request):
     if request.method=="POST":
         f1=myregisterform(request.POST)
         if f1.is_valid():
+            print(f1)
             f1.save()
+            print(f1.cleaned_data)
             return HttpResponse("registraration sucess")
     return render(request,'admin/register.html',{'f':f})
 
@@ -33,8 +35,7 @@ def course(request):
         form = coursesForm(request.POST,request.FILES)
         if form.is_valid():
             form.save()
-            data=courses.objects.all()
-            return render(request,'admin/coursemenu.html',{'data':data})
+            return redirect('coursemenu')
     return render(request, 'admin/course.html', {'f': f})
 
 @login_required(login_url='Login')
@@ -44,8 +45,21 @@ def courseconcept(request):
         form = courseconceptsform(request.POST)
         if form.is_valid():
             form.save()
-            return HttpResponse('Redirect after form submission') 
+            return redirect('admincourseconcept')
     return render(request, 'admin/courseconcept.html', {'f': f})
+
+@login_required(login_url='Login')
+def admincourseconcept(request):
+    data=courseconcepts.objects.all()
+    return render(request,'admin/courseconeptmenu.html',{'data':data})
+
+
+@login_required(login_url='Login')
+def deleteadmincourseconcept(request,id):
+    data=courseconcepts.objects.get(id=id)
+    data.delete()
+    return redirect('admincourseconcept')
+
 
 @login_required(login_url='Login')
 def admincoursemenu(request):
