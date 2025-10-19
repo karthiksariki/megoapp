@@ -46,5 +46,10 @@ urlpatterns = [
     path('enroll-courses/', enroll_courses, name='enroll_courses'),
     path('conceptmenu/',admincourseconcept,name='admincourseconcept'),
     path('deleteconcept/<int:id>/',deleteadmincourseconcept,name='deleteadmincourseconcept'),
+    # path('usersdata/', UsersData.as_view(), name='usersdata'),
+    path('usersdata/', UserSearchView.as_view(), name='usersdata'),
+    path('usercreate/', usercreate, name='usercreate'),
+    path('userupdate/<int:id>/',userupdate, name='userupdate'),
+    path('userdelete/<int:id>/',userdelete, name='userdelete'),
 ]
 

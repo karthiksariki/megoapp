@@ -319,9 +319,9 @@ body::-webkit-scrollbar {
 }
 
 .cart-button:not(#go1) {
-  background-color: rgb(132, 132, 132);
+  background-color: #7EEFD1;
   color: white;
-  border: 1px solid rgb(132, 132, 132);
+  border: 1px solid #7EEFD1;
 }
 
 #go1 {

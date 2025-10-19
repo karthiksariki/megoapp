@@ -12,11 +12,12 @@
     </div>
     <div id="right">
        {% if user.is_authenticated %}
-       <a href="{% url 'home' %}">Home</a>
-       <a href="{% url 'coursemenu' %}">add-Courses</a>
-       <a href="{% url 'courseconcept' %}">add-courseconcept</a>
-       <a href="{% url 'course' %}">courses</a>
+       {% comment %} <a href="{% url 'home' %}">Home</a> {% endcomment %}
+       <a href="{% url 'coursemenu' %}">Courses</a>
        <a href="{% url 'admincourseconcept' %}">concepts</a>
+       <a href="{% url 'courseconcept' %}">add-Concept</a>
+       <a href="{% url 'course' %}">add-Courses</a>
+       <a href="{% url 'usersdata' %}">userdata</a>
        {% else %}
        <a href="{% url 'home' %}">Home</a>
        <a href="{% url 'card' %}">Courses</a>

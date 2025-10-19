@@ -31,3 +31,22 @@ class myregisterform(forms.ModelForm):
 class myloginform(forms.Form):
     username=forms.CharField(max_length=20)
     password=forms.CharField(max_length=20,widget=forms.PasswordInput())
+
+class adminusercreateform(forms.ModelForm):
+    class Meta:
+        model=CustomUser
+        fields='__all__'
+    
+    def save(self):
+        old=super().save(commit=False)
+        old.password=make_password(self.cleaned_data['password'], hasher='argon2')
+        old.save()
+        return old
+
+class adminuserupdateform(forms.ModelForm):
+    class Meta:
+        model=CustomUser
+        fields=['username', 'first_name', 'last_name', 'email', 'phone_number', 'is_active', 'is_staff', 
+              'is_superuser','address']
+    
+    
